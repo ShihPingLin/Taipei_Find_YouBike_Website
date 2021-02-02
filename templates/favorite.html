@@ -1,0 +1,63 @@
+{% extends './shared/layout.html' %}
+{% block body %}
+
+<section id="alert-bar-favorite">
+</section>
+
+<section class="container mt-5">
+    <div id="favorite-stop-display" class="row d-flex justify-content-center">
+        <script>
+            displayFavorite({{ ubike_data|safe }})
+            function displayFavorite(ubikeData) {
+                // get favorite stops from localStorage
+                const temp = JSON.parse(localStorage.getItem("favoriteStop"));
+                const favoriteList = temp || [];
+                // get the id of display div
+                const favoriteStopDisplay = document.getElementById("favorite-stop-display");
+                
+                favoriteStopDisplay.innerHTML = ``;
+                if (favoriteList.length == 0)
+                    favoriteStopDisplay.innerHTML = `<h4 style="text-align: center;">您尚未有常用車站<br>請按 
+                        <a id="myLoc" class="btn btn-primary" href="/favorite/edit">
+                            新增常用車站
+                        </a> 
+                        新增</h4>`;
+                else {
+                    favoriteList.forEach((val, idx) => {
+                        favoriteStopDisplay.innerHTML += `
+                            <div class="card mx-4 my-3 col-sm-6 col-md-4 bg-light" style="max-width: 18rem; padding: 0px 0px;">
+                                <div class="card-header text-center"><h5>${ ubikeData[val]['sna'] }</h5></div>
+                                <div class="card-body">
+                                    <p class="card-text">可借車數：${ ubikeData[val]["sbi"] }</p>
+                                    <p class="card-text">可還空位數：${ ubikeData[val]["bemp"] }</p>
+                                    <p class="card-text">
+                                        更新時間：${ ubikeData[val]["mday"].slice(0, 4) }/${ ubikeData[val]["mday"].slice(4, 6) }/${ ubikeData[val]["mday"].slice(6, 8) } 
+                                        ${ ubikeData[val]["mday"].slice(8, 10) }:${ ubikeData[val]["mday"].slice(10, 12) }:${ ubikeData[val]["mday"].slice(12, 14) }
+                                    </p>
+                                    <p class="card-text">詳細位置：${ ubikeData[val]["ar"] }</p>
+                                </div>
+                                <div class="card-footer text-muted text-center">
+                                    <a id="delete-${val }" class="btn btn-danger" 
+                                        onclick="delFavorite('${ ubikeData[val]['sna'] }', '${ idx }')">
+                                        刪除
+                                    </a>
+                                </div>
+                            </div>
+                        `
+                    })
+                }
+            }
+        </script>
+    </div>
+    <div style="text-align: center">
+        <a id="myLoc" class="btn btn-primary mt-5" href="/favorite/edit">
+            新增常用車站
+        </a>
+    </div>
+    <div style="text-align: center">
+        <a class="btn btn-primary mt-3" onclick="reloadAgain()">
+            重新整理
+        </a>
+    </div>
+</section>
+{% endblock %}

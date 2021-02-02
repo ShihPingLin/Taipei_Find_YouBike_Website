@@ -1,0 +1,63 @@
+{% extends './shared/layout.html' %}
+{% block body %}
+
+<section class="container mt-5">
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
+        aria-controls="pills-home" aria-selected="true">查詢附近車站</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+        aria-controls="pills-profile" aria-selected="false">新增常用車站</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
+        aria-controls="pills-contact" aria-selected="false">刪除常用車站</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+      <div class="mt-4">
+        <p><strong>說明1-1：</strong> 您可於「首頁」查詢附近的車站，您可選擇查詢方圓250公尺、500公尺、750公尺或1000公尺內的車站，點選紅色框內對應的按鈕即可進行查詢。</p>
+        <img class="w-100" src="/static/pictures/instruction/1-1.PNG" alt="說明1-1">
+      </div>
+      <div class="mt-4">
+        <p><strong>說明1-2：</strong> 查詢結果如下，黑色人圖示表示您的所在位置，腳踏車圖示表示車站，其中黑色表示車站狀態正常，<span
+            style="color: blue">藍色</span>表示可借車數或可還空位數 <= 5，<span style="color: red">紅色</span>表示可借車數或可還空位數為 0。</p>
+        <img class="w-100" src="/static/pictures/instruction/1-2.PNG" alt="說明1-2">
+      </div>
+      <div class="mt-4">
+        <p><strong>說明1-3：</strong> 點選地圖上的圖示可以看到該車站的可借車數與可還空位數，此外點選<span
+            style="color: rgb(0, 162, 255)">詳細地圖資訊</span>可以連結到Google地圖做更進一步的查詢。</p>
+        <img class="w-100" src="/static/pictures/instruction/1-3.PNG" alt="說明1-3">
+      </div>
+      <div class="mt-4">
+        <p><strong>說明1-4：</strong> 下圖為點選<span style="color: rgb(0, 162, 255)">詳細地圖資訊</span>後看到的Google地圖頁面。</p>
+        <img class="w-100" src="/static/pictures/instruction/1-4.PNG" alt="說明1-4">
+      </div>
+    </div>
+    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+      <div class="mt-4">
+        <p><strong>說明2-1：</strong> 您可於「新增常用車站」頁面新增您的常用車站，首先點選車站所在行政區，接著點選該車站對應的按鈕，便可以看到彈出視窗顯示「該車站 加入成功」。</p>
+        <img class="w-100" src="/static/pictures/instruction/2-1.PNG" alt="說明2-1">
+      </div>
+      <div class="mt-4">
+        <p><strong>說明2-2：</strong> 若該車站已經是常用車站，則會看到彈出視窗顯示「該車站 已經是常用車站」。</p>
+        <img class="w-100" src="/static/pictures/instruction/2-2.PNG" alt="說明2-2">
+      </div>
+    </div>
+    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+      <div class="mt-4">
+        <p><strong>說明3-1：</strong> 您可於「刪除常用車站」頁面刪除您的常用車站，點選資訊卡下方的刪除按鈕，便可以看到彈出視窗顯示「確定要刪除 該車站」，點選OK便可刪除。</p>
+        <img class="w-100" src="/static/pictures/instruction/3-1.PNG" alt="說明3-1">
+      </div>
+      <div class="mt-4">
+        <p><strong>說明3-2：</strong> 若沒有常用車站會顯示如下的畫面。</p>
+        <img class="w-100" src="/static/pictures/instruction/3-2.PNG" alt="說明3-2">
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

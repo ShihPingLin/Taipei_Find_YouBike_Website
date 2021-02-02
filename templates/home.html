@@ -1,0 +1,34 @@
+{% extends './shared/layout.html' %}
+{% block body %}
+
+<section id="map-div">
+    <div id="map"></div>
+</section>
+
+<section style="text-align: center;" class="my-3">
+    <a id="myLoc" onclick="getLocationAndDisplay({{ ubike_data }}, 0.25)" class="btn btn-secondary" href="#"
+        role="button">查詢方圓 250 公尺內的車站</a>
+    <a id="myLoc" onclick="getLocationAndDisplay({{ ubike_data }}, 0.5)" class="btn btn-secondary" href="#"
+        role="button">查詢方圓 500 公尺內的車站</a>
+    <a id="myLoc" onclick="getLocationAndDisplay({{ ubike_data }}, 0.75)" class="btn btn-secondary" href="#"
+        role="button">查詢方圓 750 公尺內的車站</a>
+    <a id="myLoc" onclick="getLocationAndDisplay({{ ubike_data }}, 1)" class="btn btn-secondary" href="#"
+        role="button">查詢方圓 1000 公尺內的車站</a>
+</section>
+
+<section class="container">
+    <div class="row" id="ubike-info">
+    </div>
+</section>
+
+<div style="text-align: center">
+    <a class="btn btn-primary mt-3" onclick="reloadAgain()">
+        重新整理
+    </a>
+</div>
+
+<!-- google map  -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJaZTHih9s02kaRPwbnMKQfSzuEQEW5gI&callback=initMap&libraries=&v=weekly"
+    defer></script>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends './shared/layout.html' %}
+{% block body %}
+
+<section class="container">
+    <ul class="d-flex justify-content-center nav nav-pills my-5" id="pills-tab" role="tablist">
+        {% for area in ubike_data_area %}
+            {% if loop.index == 1 %}
+                <li class="nav-item">
+                    <a class="nav-link active" id="pills-{{ area }}-tab" data-toggle="pill" href="#pills-{{ area }}" role="tab"
+                        aria-controls="pills-{{ area }}" aria-selected="true">{{ area }}</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-{{ area }}-tab" data-toggle="pill" href="#pills-{{ area }}" role="tab"
+                        aria-controls="pills-{{ area }}" aria-selected="false">{{ area }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <div class="d-flex justify-content-center tab-content" id="pills-tabContent">
+        {% for area in ubike_data_area %}
+            {% if loop.index == 1 %}
+                <div style="text-align: center" class="tab-pane fade show active" id="pills-{{ area }}" role="tabpanel" aria-labelledby="pills-{{ area }}-tab">
+                    {% for i in ubike_data_area[area] %}
+                        <a class="btn btn-secondary mx-2 my-2" onclick="setFavorite({{ ubike_data[i] }})">{{ ubike_data[i]["sna"] }}</a>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div style="text-align: center" class="tab-pane fade" id="pills-{{ area }}" role="tabpanel" aria-labelledby="pills-{{ area }}-tab">
+                    {% for i in ubike_data_area[area] %}
+                        <a class="btn btn-secondary mx-2 my-2" onclick="setFavorite({{ ubike_data[i] }})">{{ ubike_data[i]["sna"] }}</a>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div style="text-align: center">
+        <a href="/favorite" class="btn btn-primary my-5">回到常用車站</a>
+    </div>
+</section>
+
+{% endblock %}
