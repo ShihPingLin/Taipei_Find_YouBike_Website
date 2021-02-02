@@ -20,6 +20,9 @@ Taipei Find YouBike Website can help people look for the nearest YouBike Station
 
 ### Some Screenshots of the website
 ![Imgur](https://i.imgur.com/PbyElEA.png)
+
 ![Imgur](https://i.imgur.com/uljyVP2.png)
+
 ![Imgur](https://i.imgur.com/lNaM5Mh.png)
+
 ![Imgur](https://i.imgur.com/dEY8eDC.png)
