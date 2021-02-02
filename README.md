@@ -1,5 +1,5 @@
 # Taipei_Find_YouBike_Website
-Help you look for the nearest YouBike Station
+A personalized website which helps you look for the nearest YouBike Station
 
 ### Usage
 ```
