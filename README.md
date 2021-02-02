@@ -18,5 +18,8 @@ $ python app.py
 ### Brief Introduction
 Taipei Find YouBike Website can help people look for the nearest YouBike Station. Besides, it'll show some information such as the number of bikes, the number of empty spaces. Moreover, people can add YouBike Stations they frequently use to the page so that they can see information of those stations immediately. This is a convenient and personalized website which tends to make people everyday-life much more easier.
 
-### Some Website Screenshots
+### Some Screenshots of the website
 ![Imgur](https://i.imgur.com/PbyElEA.png)
+![Imgur](https://i.imgur.com/uljyVP2.png)
+![Imgur](https://i.imgur.com/lNaM5Mh.png)
+![Imgur](https://i.imgur.com/dEY8eDC.png)
