@@ -2,6 +2,8 @@
 A personalized website which helps you look for the nearest YouBike Station
 
 ### Usage
+First, please change "YourGoogleMapKey" in home.html to your google map api key.
+Then, you can enter commands below to execute:
 ```
 $ pip install -r requirements.txt
 $ python app.py
