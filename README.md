@@ -8,7 +8,7 @@ Then, you can enter commands below to execute:
 $ pip install -r requirements.txt
 $ python app.py
 ```
-(If you want to deploy on Heroku, please remember to change the port in app.py from 127.0.0.1 to 0.0.0.0)
+( If you want to deploy on Heroku, please remember to change the port in app.py from 127.0.0.1 to 0.0.0.0 )
 
 ### Files
 - app.py: The flask server source file
